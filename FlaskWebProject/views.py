@@ -16,7 +16,7 @@ import uuid
 import logging
 
 # Configure logging
-logging.basicConfig(filename='login.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# logging.basicConfig(filename='login.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 imageSourceUrl = 'https://'+ app.config['BLOB_ACCOUNT']  + '.blob.core.windows.net/' + app.config['BLOB_CONTAINER']  + '/'
 
