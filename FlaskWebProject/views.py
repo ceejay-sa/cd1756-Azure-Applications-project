@@ -13,7 +13,7 @@ from FlaskWebProject.models import User, Post
 import msal
 import uuid
 # for login logging
-import logging
+# import logging
 
 # Configure logging
 # logging.basicConfig(filename='login.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -72,12 +72,12 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             # log unsuccessful login
-            logging.warning(f'Unsuccessful login attempt for user: {form.username.data}')
+            # logging.warning(f'Unsuccessful login attempt for user: {form.username.data}')
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         # log successful login
-        logging.info(f'Successful login for user: {form.username.data}')
+        # logging.info(f'Successful login for user: {form.username.data}')
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
