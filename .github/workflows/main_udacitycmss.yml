@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
       - name: Create and start virtual environment
         run: |
@@ -30,9 +30,7 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: |
-          sudo apt-get install unixodbc unixodbc-dev
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -70,9 +68,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_59B4E37AE0964BE19A7178D048CC1453 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_459C2103BD3840E993A258B06FE47609 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B75DAB4D22644392AB722B11276E1C8E }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_09E5E62D54A444B68C7A3B756DA5ADAD }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3ED8E0F339DF4DD180B01EF472001568 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_89CA27676591487F844D5B2B61FA6E01 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
